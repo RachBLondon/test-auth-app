@@ -12,7 +12,7 @@ var app = express();
 var sdkid = process.env.YOTI_CLIENT_SDK_ID;
 var appid = process.env.APPLICATION_ID;
 
-var keyfilepath = fs.readFileSync(__dirname + "/keys/key.pem");
+var keyfilepath = process.env.PRIVATE_KEY;
 var yotiClient = new yotisdk(sdkid, keyfilepath);
 
 // App config
