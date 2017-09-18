@@ -80,8 +80,8 @@ app.get("/profile", function(req, res) {
 
 // SERVER SETUP
 var options = {
-  key: fs.readFileSync(__dirname + "/ssl/localhost.key"),
-  cert: fs.readFileSync(__dirname + "/ssl/localhost.crt")
+  key: process.env.SSL_KEY,
+  cert: process.env.SSL_CERT
 };
 
 var server = https.createServer(options, app);
